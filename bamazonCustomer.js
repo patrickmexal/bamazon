@@ -5,5 +5,5 @@ Const connection  = mysql.createConnection ({
 	port: 3306,
 	user: “”,
 	password: “”,
-	database: “ice_creamDB”
+	database: “bamazon”
 });
