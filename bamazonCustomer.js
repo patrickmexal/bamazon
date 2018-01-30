@@ -13,18 +13,25 @@ function inquireForPurchase() {
         message: "What would you like to buy today?",
         type: "list",
         choices: ["Macbook Pro", "Sony A7", "Timex Weekender Chronograph", "Iphone X", "Google Pixel", "Sony A6000", "Fuji X-T2", "Macbook Air", "Sony NEX-5N", "Apple Watch"]
-    }, {
+    }).then(function(answers) {
+        let desiredPurchase = answers.whatDoYouWant;
+    });
+};
+
+function inquireForQuantity() {
+
+    inquirer.prompt({
         name: "howManyDoYouWant",
         message: "How many of your chosen item do you wish to buy?",
         type: "input",
         choices: []
     }).then(function(answers) {
-        let desiredPurchase = answers.whatDoYouWant;
         let desiredQuantity = answers.howManyDoYouWant;
     });
 };
 
 inquireForPurchase();
+inquireForQuantity();
 
  var connection = mysql.createConnection({
     host: "localhost",
