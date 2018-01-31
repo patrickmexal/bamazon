@@ -42,7 +42,7 @@ connection.connect();
 
 connection.query('SELECT item_id, product_name, department_name, price, stock_quantity FROM products', function(err, result) {
     if (err) console.log(err);
-    else console.log(result);
+    //else console.log(result);
 });
 
 /* MySQL Purchase Query */
