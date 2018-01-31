@@ -2,7 +2,6 @@
 var mysql = require("mysql");
 var prompt = require("prompt");
 var inquirer = require("inquirer");
-var table = require("cli-table");
 var desiredPurchase = "";
 var desiredQuantity = 0;
 
@@ -46,8 +45,9 @@ connection.query('SELECT item_id, product_name, department_name, price, stock_qu
     //else console.log(result);
 });
 
+console.log(stock_quantity);
 /* MySQL Purchase Query */
-function bamazonPurchase() {
+function bamazonPurchase(desiredQuantity, desiredPurchase) {
     connection.query("SELECT * FROM products WHERE product_name" + desiredPurchase, function(error, response) {
         if (desiredQuantity <= response[0].stock_quantity) {
             console.log("On the way my friend!");
