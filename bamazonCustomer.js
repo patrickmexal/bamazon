@@ -24,6 +24,7 @@ function inquireForPurchase() {
           var desiredPurchase = answers.whatDoYouWant;
           var desiredQuantity = answers.howManyDoYouWant;
           bamazonPurchase(desiredPurchase, desiredQuantity);
+
     });
 };
 
